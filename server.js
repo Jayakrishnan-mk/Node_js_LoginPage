@@ -10,6 +10,8 @@ const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
 
+const indexRouter= require('./routes/index')
+
 
 const initializePassport = require('./passport-config')
 // const { session } = require('passport');
@@ -34,6 +36,8 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
+
+app.use('/login', indexRouter);
 
 
 app.get('/', checkAuthenticated, (req, res) => {
@@ -72,8 +76,7 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
         res.redirect('/register')
 
     }
-
-
+    
     console.log(users);
 })
 
@@ -102,3 +105,4 @@ function checkNotAuthenticated(req, res, next) {
 }
 
 app.listen(3000)
+

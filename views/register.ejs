@@ -1,21 +1,36 @@
-<h1>Register</h1>
-<form action="/register" method="post">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- <div class="main" style="position: fixed; margin-left: 38%; margin-top: 10%; width: 100%; background-color: blueviolet;"> -->
+    <div class="header col-12" style="position: fixed; margin: 10%; margin-left: 35%; width: 30%; background-color: aquamarine;">
+
+        <div class="sub" style="padding: 10%;">
+            <div class="row">
+
+
+
+                <h1 style="margin: center;">Register</h1><br><br>
+                <form action="/register" method="post">
+                    <div>
+                        <label for="name">Name:</label><br>
+                        <input type="text" name="name" id="name" required><br>
+                    </div>
+
+                    <div>
+                        <label for="email">Email:</label><br>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+
+                    <div>
+                        <label for="password">Password</label><br>
+                        <input type="password" name="password" id="password" required><br><br>
+                    </div>
+
+                    <button type="submit">Register</button><br><br>
+                    <a href="/login">Login</a>
+                </form>
+            </div>
+        
     </div>
+</div>
 
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
-    </div>
 
-    <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-    </div>
-
-    <button type="submit">Register</button>
-</form>
-
-<a href="/login">Login</a>
